@@ -1,0 +1,88 @@
+<section class="pt_50 pb_50">
+  <div class="container">
+    <div class="row mb_20">
+      <div class="col-md-12">
+        <h4>View User Details</h4>
+      </div>
+    </div>
+    <div class="row mb_20">
+      <div class="col-md-12">
+        <form>
+          <div class="row">
+            <div class="col-md-4 form-group">
+              <label>Enter Name</label>
+              <input type="text" class="form-control" [value]="customer.name" placeholder="Enter Name" disabled />
+            </div>
+            <div class="col-md-4 form-group">
+              <label>Enter Age</label>
+              <input type="text" class="form-control" [value]="getAge(customer.age)" placeholder="Enter Age" disabled />
+            </div>
+            <div class="col-md-4 form-group">
+              <label>Select Gender</label>
+              <select class="form-control" disabled>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Others</option>
+              </select>
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="pt_50 pb_50">
+  <div class="container">
+    <div class="row mb_20">
+      <div class="col-md-12">
+        <h4>Addresses</h4>
+      </div>
+    </div>
+    <div class="row mb_20">
+      <div *ngFor="let address of customer.address;let i= index;" class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Address {{ i + 1 }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ address.houseNumber }}</h6>
+            <address>
+              {{ address.street }}, {{ address.postCode }}
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb_20">
+      <div class="col-md-12">
+        <h4>Orders</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Order ID</th>
+                <th scope="col">Order Date</th>
+                <th scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let order of customer.orders">
+                <td>{{ order.orderId }}</td>
+                <td>{{ order.orderDate | date: 'dd MMM yyyy' }}</td>
+                <td>{{ order.amount }}</td>
+
+            </tbody>
+          </table>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

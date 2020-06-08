@@ -1,0 +1,26 @@
+[
+  {
+    "customerId": 1,
+    "name": "First User",
+    "gender": "male",
+    "age": "Mon Jun 08 2020 13:04:32 GMT+0530 (India Standard Time)",
+    "address": [
+      {
+        "street": "test 1",
+        "postCode": "1222211",
+        "houseNumber": 10
+      },
+      {
+        "street": "test 2",
+        "postCode": "423313",
+        "houseNumber": 20
+      }
+    ],
+    "orders": [
+      {
+        "orderId": "212",
+        "orderDate": ""
+      }
+    ]
+  }
+]
